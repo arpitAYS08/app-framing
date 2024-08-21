@@ -1,2 +1,2 @@
-# app-framing
-app framing ai based web for Q&amp;A on documents
+# app-framing-marketing
+Marketing web app of app framing
