@@ -11,7 +11,7 @@ export default function Footer() {
                   <Image src={aiMarketingLogo} className="h-15 w-60 me-3" alt="FlowBite Logo" />
               </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -20,7 +20,7 @@ export default function Footer() {
                       </li>
                   </ul>
               </div>
-              <div>
+              {/* <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
@@ -30,15 +30,15 @@ export default function Footer() {
                           <a href="https://ayssoftwaresolution.com/" className="hover:underline">Discord</a>
                       </li>
                   </ul>
-              </div>
+              </div> */}
               <div>
-                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us on</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="#" className="hover:underline">Privacy Policy</a>
+                          <a href="https://ayssoftwaresolution.com/" className="hover:underline ">Github</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                          <a href="https://ayssoftwaresolution.com/" className="hover:underline">Discord</a>
                       </li>
                   </ul>
               </div>

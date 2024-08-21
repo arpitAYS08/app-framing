@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Field, Label, Switch } from "@headlessui/react";
+// import { Field, Label, Switch } from "@headlessui/react";
 
 export default function ContactUs() {
   const [agreed, setAgreed] = useState(false);
@@ -77,7 +77,7 @@ export default function ContactUs() {
     }
   };
 
-  console.log(formData);
+
 
   const handlePrivacyPolicyClick = () => {
     window.open("https://your-privacy-policy-url.com", "_blank");
@@ -98,7 +98,7 @@ export default function ContactUs() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Contact sales
+          Get Your Access Key:
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
           "Reach Out to Us – We're Here to Help!"
@@ -172,6 +172,7 @@ export default function ContactUs() {
                   id="company"
                   name="company"
                   type="text"
+                  placeholder="App Framing"
                   autoComplete="organization"
                   value={formData.company}
                   onChange={handleChange}
@@ -188,7 +189,7 @@ export default function ContactUs() {
               </label>
               <div className="relative mb-6">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                  <svg
+                  {/* <svg
                     className="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +197,7 @@ export default function ContactUs() {
                     viewBox="0 0 20 16">
                     <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
                     <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                  </svg>
+                  </svg> */}
                 </div>
                 <input
                   id="email"
@@ -205,7 +206,7 @@ export default function ContactUs() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`block w-full rounded-md border-0 px-3.5 py-2 ps-10 text-gray-900 shadow-sm ring-1 ring-inset ${
+                  className={`block w-full rounded-md border-0 px-3.5 py-2  text-gray-900 shadow-sm ring-1 ring-inset ${
                     errors.email ? "ring-red-500" : "ring-gray-300"
                   } placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6`}
                   placeholder="Email"
@@ -224,6 +225,7 @@ export default function ContactUs() {
               <div className="mt-2.5">
               <input
                   id="phone-number"
+                  placeholder="38392090029"
                   name="phoneNumber"
                   type="text"
                   autoComplete="tel"
@@ -256,7 +258,7 @@ export default function ContactUs() {
                 )}
               </div>
             </div>
-            <Field className="flex gap-x-4 sm:col-span-2">
+            {/* <Field className="flex gap-x-4 sm:col-span-2">
             <div className="flex h-6 items-center">
               <Switch
                 checked={agreed}
@@ -276,11 +278,11 @@ export default function ContactUs() {
               </a>
               .
             </Label>
-          </Field>
+          </Field> */}
           </div>
           <div className="mt-10">
           {
-            agreed
+            true
             ?
             <button
             type="submit"
