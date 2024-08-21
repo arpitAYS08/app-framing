@@ -25,8 +25,7 @@ const Service = () => {
           What we provide?
         </h1>
         <p className="text-center text-lg mb-12">
-          At CG Advantage, we excel in connecting businesses with top tech talent globally. Our
-          streamlined processes ensure that you get the right talent quickly and efficiently.
+        The App Framing platform is your one-stop solution for AI-enabled applications, offering seamless integration, comprehensive support, and customized tools to enhance your enterprise's AI capabilities.
         </p>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
