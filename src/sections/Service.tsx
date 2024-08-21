@@ -52,39 +52,39 @@ export default Service;
 
 const services = [
   {
-    title: "Top Talent",
+    title: "AI/ML Operations",
     description:
-      "Access the top 3% of software developers and tech professionals ensuring you only work with the best in the industry.",
+      "Comprehensive AI and machine learning operations to ensure seamless deployment, monitoring, and optimization of AI models within your enterprise.",
     icon: "https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_5.png",
   },
   {
-    title: "Instant Fulfillment",
+    title: "Custom Integration",
     description:
-      "Experience a robust hiring process that offers quick access to the right talent ensuring you find the right talent at the right time.",
+      "Tailored integration services to embed AI capabilities into your existing infrastructure, ensuring smooth interoperability and minimal disruption.",
     icon: "https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_2.png",
   },
   {
-    title: "Deep Expertise",
+    title: "App-Framing Customization",
     description:
-      "Leverage the deep expertise of our professionals who possess specialized knowledge across hundreds of technologies.",
+      "Personalized customization of the App Framing platform to meet your unique business requirements and operational needs.",
     icon: "https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_5.png",
   },
   {
-    title: "Seamless Onboarding",
+    title: "SDK Development",
     description:
-      "Our professionals seamlessly integrate into your project – fostering collaboration and maximizing productivity.",
+      "Development of Software Development Kits (SDKs) to facilitate easy integration and utilization of AI features across various applications and platforms.",
     icon: "	https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_4.png",
   },
   {
-    title: "Client-Centric Approach",
+    title: "End-to-End Solution Implementation",
     description:
-      "We prioritize your unique needs and deliver personalized staffing solutions to fulfill your project goals.",
+      "Full-cycle implementation services, from initial assessment to deployment, ensuring your AI initiatives are successful and scalable.",
     icon: "https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_5.png",
   },
   {
-    title: "Flexible Engagements",
+    title: "Ongoing Support and Maintenance",
     description:
-      "Adapt to changing needs with ease. Conveniently scale up or down based on your project needs.",
+      "Dedicated support and maintenance services to keep your AI-driven applications running smoothly and effectively over time.",
     icon: "https://cgadvantage.com/wp-content/themes/homedroid/assets/images/icon_6.png",
   },
 ];
