@@ -1,6 +1,7 @@
 // components/TutorialSection.js
 import Image from 'next/image';
 import { firstStep, fourthStep, secondStep, thirdStep, fifthhStep, sixthStep} from '../app/assets';
+import Reveal from '../components/common/Reveal';
 
 const tutorials = [
   { title: "Actor Configuration", description: "Learn how to configure actors.", videoUrl: firstStep },
@@ -22,13 +23,19 @@ const TutorialSection = () => {
               key={index}
               className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
             >
+               <Reveal width="100%">
               <video controls className="w-full h-48 object-cover">
                 <source src={tutorial.videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              </Reveal>
               <div className="p-6">
+              <Reveal width="100%">
                 <h3 className="text-2xl font-bold mb-3 text-gray-800">{tutorial.title}</h3>
+                </Reveal>
+                <Reveal width="100%">
                 <p className="text-gray-600">{tutorial.description}</p>
+                </Reveal>
               </div>
             </div>
           ))}

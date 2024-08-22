@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useInView, useAnimation} from 'framer-motion'
+import Reveal from "../components/common/Reveal";
 
 
 const Service = () => {
@@ -21,13 +22,16 @@ const Service = () => {
   return (
     <section ref={ref} id="service" className="service bg-white py-12 scroll-smooth">
       <div className="py-16 px-4 mx-auto max-w-screen-xl text-center lg:py-32 lg:px-12">
+      <Reveal width="100%">
         <h1 className="text-center text-heading-color font-semibold text-3xl mb-10">
           What we provide?
         </h1>
+        </Reveal>
+        <Reveal width="100%">
         <p className="text-center text-lg mb-12">
         The App Framing platform is your one-stop solution for AI-enabled applications, offering seamless integration, comprehensive support, and customized tools to enhance your enterprise's AI capabilities.
         </p>
-
+        </Reveal>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
              <div
@@ -37,8 +41,13 @@ const Service = () => {
              <div className="flex justify-center mb-6">
                <img src={service.icon} alt={service.title} className="w-8 h-auto" />
              </div>
+             <Reveal width="100%">
              <h4 className="text-center text-xl font-semibold mb-4">{service.title}</h4>
+             </Reveal>
+             <Reveal width="100%">
+              
              <p className="text-center">{service.description}</p>
+             </Reveal>
            </div>
           ))}
         </div>
