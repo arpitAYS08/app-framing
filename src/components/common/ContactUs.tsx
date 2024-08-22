@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function ContactUs() {
   const [agreed, setAgreed] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -45,43 +45,60 @@ export default function ContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("heelo");
 
-    if (!validateForm() || !agreed) {
+    if (!validateForm()) {
       // alert("Please fill all mandatory fields and agree to the policy.");
       return;
     }
-
+    console.log("heelo1");
     try {
-      await fetch("/api/submit", {
+      const res = await fetch("https://api.airtable.com/v0/appSv5yEjxUB79Rn1/Sheet1", {
         method: "POST",
         headers: {
+          Authorization:
+            "Bearer patMOQet8xS7wLwrI.d933051b4190e30b5d6877b1d48d8a712a10c06c28c7785fee32b0a1e5431407",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          records: [
+            {
+              fields: {
+                firstName: "Arpit",
+                lastName: "Singh",
+                company: "AYS",
+                email: "arpit.singh@ayssoftwaresolution.com",
+                message: "hueet",
+                phoneNumber: "9238898293",
+              },
+            },
+          ],
+        }), // Passing FormData directly
       });
-      
-      setShowThankYou(true);
-      setTimeout(() => {
-        setShowThankYou(false);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          company: "",
-          email: "",
-          phoneNumber: "",
-          message: "",
-        });
-      }, 3000); // 3 seconds
+
+      const data = await res.json();
+      if (data) {
+        setShowThankYou(true);
+        setTimeout(() => {
+          setShowThankYou(false);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            company: "",
+            email: "",
+            phoneNumber: "",
+            message: "",
+          });
+        }, 3000); // 3 seconds
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
-
-
-  const handlePrivacyPolicyClick = () => {
-    window.open("https://your-privacy-policy-url.com", "_blank");
-  };
+  // const handlePrivacyPolicyClick = () => {
+  //   window.open("https://your-privacy-policy-url.com", "_blank");
+  // };
 
   return (
     <div className="relative isolate bg-white px-6 py-24 sm:py-10 lg:px-8 mt-10 z-0">
@@ -111,7 +128,11 @@ export default function ContactUs() {
           </p>
         </div>
       ) : (
-        <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={handleSubmit}>
+        <form
+          action="#"
+          method="POST"
+          className="mx-auto mt-16 max-w-xl sm:mt-20"
+          onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
               <label
@@ -120,7 +141,7 @@ export default function ContactUs() {
                 First name
               </label>
               <div className="mt-2.5">
-              <input
+                <input
                   id="first-name"
                   name="firstName"
                   type="text"
@@ -144,7 +165,7 @@ export default function ContactUs() {
                 Last name
               </label>
               <div className="mt-2.5">
-              <input
+                <input
                   id="last-name"
                   name="lastName"
                   type="text"
@@ -184,7 +205,9 @@ export default function ContactUs() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold leading-6 text-gray-900">
                 Email
               </label>
               <div className="relative mb-6">
@@ -211,9 +234,7 @@ export default function ContactUs() {
                   } placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6`}
                   placeholder="Email"
                 />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">Email is required.</p>
-                )}
+                {errors.email && <p className="mt-1 text-sm text-red-500">Email is required.</p>}
               </div>
             </div>
             <div className="sm:col-span-2">
@@ -223,7 +244,7 @@ export default function ContactUs() {
                 Phone number <span className="text-gray-400">(optional)</span>
               </label>
               <div className="mt-2.5">
-              <input
+                <input
                   id="phone-number"
                   placeholder="38392090029"
                   name="phoneNumber"
@@ -242,7 +263,7 @@ export default function ContactUs() {
                 Message
               </label>
               <div className="mt-2.5">
-              <textarea
+                <textarea
                   id="message"
                   name="message"
                   rows={4}
@@ -281,24 +302,21 @@ export default function ContactUs() {
           </Field> */}
           </div>
           <div className="mt-10">
-          {
-            true
-            ?
-            <button
-            type="submit"
-            className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-gray disabled:cursor-not-allowed">
-            Let's talk
-          </button>
-          :
-          <button
-            type="submit"
-            disabled
-            className="block w-full rounded-md bg-gray-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-gray disabled:cursor-not-allowed">
-            Let's talk
-          </button>
-          }
-          
-        </div>
+            {true ? (
+              <button
+                type="submit"
+                className="block w-full rounded-md bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-gray disabled:cursor-not-allowed">
+                Let's talk
+              </button>
+            ) : (
+              <button
+                type="submit"
+                disabled
+                className="block w-full rounded-md bg-gray-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-gray disabled:cursor-not-allowed">
+                Let's talk
+              </button>
+            )}
+          </div>
         </form>
       )}
     </div>
